@@ -20,32 +20,78 @@
 		.nes-balloon.from-left{
 			padding-left:30px;
 		}
+		#musicPlayer {
+      		display: none;
+    	}
+
+		.music-container {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			flex-direction: column;
+		}
+
+		#playButton {
+		margin-top: 20px;
+		}
+		.flex-container {
+            display: inline;
+            align-items: left;
+            justify-content: space-between;
+			padding-right: 2000px;
+        }
 
 	</style>
 </head>
 <body>
-	<nav style='padding: 20px; border-bottom: 3px solid #ccc; margin-bottom: 40px;'>
-		<div class="container">
-			<h2 style='margin-bottom: 0;'>
-				<i class="nes-icon coin"></i>
-			Samya Ahsan</h2>
-	</div>
-	</nav>
+
+		<nav style='padding: 20px; border-bottom: 3px solid #ccc; margin-bottom: 40px;'>
+			<div class="container">
+				<h2 style='margin-bottom: 0;'>
+					<i class="nes-icon coin"></i>
+				Samya Ahsan
+				</h2>
+			</div>
+		</nav>
 
 	<div class="container" style='margin-bottom: 50px;'>
 		<div class="row">
 			<div class="col">
-				<i class="nes-bcrikko"></i>
+				<img 
+					src = "me.png"
+					style="width: 100px; height:auto; image-rendering: pixelated; image-rendering: -moz-crisp-edges;"
+					>
 			</div>
 			<div class="col-sm-9 col-xs-12">
 				<div class="nes-balloon from-left">
 		        <p>hi! i'm samya -- check out my stats!</p>
 		      </div>
 			</div>
+			<div class="music-container">
+				<a class="nes-btn is-primary" id="playButton" href="#" style="margin-bottom:70px;">Play Music</a>
+				<audio id="musicPlayer" controls>
+					<source src="daftpunk.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+			<script>
+				const playButton = document.getElementById("playButton");
+				const musicPlayer = document.getElementById("musicPlayer");
+			  
+				playButton.addEventListener("click", () => {
+				  if (musicPlayer.paused) {
+					musicPlayer.play();
+					playButton.textContent = "Pause Music";
+				  } else {
+					musicPlayer.pause();
+					playButton.textContent = "Play Music";
+				  }
+				});
+			  </script>
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" style="margin-top:-50px">
 
 		<div class="row">
 			<div class="col-md-4 col-sm-12 col-xs-12">
@@ -55,8 +101,9 @@
 						<div class="lists">
 							<ul class="nes-list is-disc" style='margin-bottom:0;'>
 							    <li style='margin-bottom:10px; margin-left:-20px;'>studying cs @ columbia SEAS</li>
-							    <li style='margin-bottom:10px; margin-left:-20px;'>research @ creative machines</li>
-							    <li style='margin-bottom:10px; margin-left:-20px;'>fellow @ Uber SWE prep</li>
+								<li style='margin-bottom:10px; margin-left:-20px;'>machine learning intern @ Reddit</li>
+							    <li style='margin-bottom:10px; margin-left:-20px;'>ml research @ creative machines</li>
+							    <li style='margin-bottom:10px; margin-left:-20px;'>playing zelda: breath of the wild</li>
 							</ul>
 						</div>
 					</div>
@@ -103,9 +150,9 @@
 				<div class="nes-container is-dark with-title" style='margin-top:40px; margin-bottom: 40px;'>
 					<h3 class="title">Resume</h3>
 					<div>
-						<a href = "https://www.dropbox.com/s/d2h8rxw31v51wvs/Samya_Ahsan_Resume_22.pdf?dl=0">
+						<a href = "https://www.dropbox.com/scl/fi/zwgqppqkss9fa7shaopt7/Samya_Ahsan_Resume_SWE_Fall_23.pdf?rlkey=2kx70bg80brpmpbvktdsnntl4&dl=0">
 							<i class="snes-jp-logo"></i>
-							Samya's Resume
+							My Resume
 						</a>
 					</div>
 				
@@ -123,16 +170,16 @@
 				<div class="nes-container with-title" style='margin-bottom:51px;'>
 					<h3 class="title">Core Skills</h3>
 					<div class="row">
-						<div class="col-sm-4 col-xs-12" style='margin-top:12px;'>Java</div>
+						<div class="col-sm-4 col-xs-12" style='margin-top:12px;'>Python</div>
 							<div class="col-sm-8 col-xs-12">
-								<progress class="nes-progress progress is-success" value="90" max="100"></progress>
+								<progress class="nes-progress progress is-success" value="95" max="100"></progress>
 							</div>
 						</div>
 
 						<div class="row">
-							<div class="col-sm-4 col-xs-12" style='margin-top:12px;'>Python</div>
+							<div class="col-sm-4 col-xs-12" style='margin-top:12px;'>Java</div>
 								<div class="col-sm-8 col-xs-12">
-									<progress class="nes-progress is-success" value="75" max="100"></progress>
+									<progress class="nes-progress is-success" value="90" max="100"></progress>
 								</div>
 							</div>
 
@@ -146,7 +193,7 @@
 								<div class="row">
 									<div class="col-sm-4 col-xs-12" style='margin-top:12px;'>SQL</div>
 										<div class="col-sm-8 col-xs-12">
-											<progress class="nes-progress is-warning" value="50" max="100"></progress>
+											<progress class="nes-progress is-warning" value="70" max="100"></progress>
 										</div>
 									</div>
 								</div>
@@ -155,21 +202,21 @@
 									<div class="row">
 										<div class="col-sm-4 col-xs-12">Git</div>
 										<div class="col-sm-8 col-xs-12">
-											<progress class="nes-progress is-success" value="80" max="100"></progress>
+											<progress class="nes-progress is-success" value="90" max="100"></progress>
 										</div>
 									</div>
 
 									<div class="row">
-										<div class="col-sm-4 col-xs-12">OpenCV</div>
+										<div class="col-sm-4 col-xs-12">UNIX/Linux</div>
 										<div class="col-sm-8 col-xs-12">
-											<progress class="nes-progress is-warning" value="60" max="100"></progress>
+											<progress class="nes-progress is-warning" value="75" max="100"></progress>
 										</div>
 									</div>
 
 									<div class="row">
-										<div class="col-sm-4 col-xs-12">MATLAB</div>
+										<div class="col-sm-4 col-xs-12">MongoBD/Neo4j</div>
 										<div class="col-sm-8 col-xs-12">
-											<progress class="nes-progress is-error" value="30" max="100"></progress>
+											<progress class="nes-progress is-error" value="60" max="100"></progress>
 										</div>
 									</div>
 
@@ -180,23 +227,44 @@
 									<i class="nes-icon star" style = 'margin-right:25px;'></i>Experience
 								</h3>
 								<div class="nes-container">
+
 									<div class="row" style='margin-bottom:30px;'>
 										<div class="col-xs-1.5">
 											<img 
-											src = "https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Columbia_Engineering_logo.svg/50px-Columbia_Engineering_logo.svg.png"
+											src = "https://preview.redd.it/jwyyrxafvpq81.png?width=168&format=png&auto=webp&s=2d9938b8d5c2e5bc352d29a316ddf4ce15522317"
+											style="width: 50px; height:auto; image-rendering: pixelated; image-rendering: -moz-crisp-edges;"
+											>
+										</div>
+										<div class="col-xs-10">
+											<h3 style='margin-left:10px;'>Reddit</h3>
+												<p style='margin-left:10px;'>Machine Learning Intern, Ads Targeting</p>
+												<p style='margin-left:10px;'>Jun 2023 - Aug 2023</p>
+											
+											<div>
+							
+												<a href = "https://www.redditinc.com/blog/investing-in-what-makes-reddit-unique-introducing-contextual-keyword-targeting-and-product-ads">
+													<div class="nes-icon google"></div>
+												</a>
+											</div>
+											
+										</div>
+									</div>
+									
+									<div class="row" style='margin-bottom:30px;'>
+										<div class="col-xs-1.5">
+											<img 
+											src = "columbia.png"
 											style="width: 100%; height:auto; image-rendering: pixelated; image-rendering: -moz-crisp-edges;"
 											
 											>
 										</div>
 										<div class="col-xs-10">
 											<h3 style='margin-left:10px;'>Columbia Engineering</h3>
-												<p style='margin-left:10px;'>Digital Food team @ Creative Machines Lab under Dr. Hod Lipson</p>
+												<p style='margin-left:10px;'>Graph Machine Learning @ Creative Machines Lab under Dr. Hod Lipson</p>
 												<p style='margin-left:10px;'>Jan 2022 - Present</p>
 											
 											<div>
-												<a href = "https://github.com/samyaahsan/cv_quantifying_food">
-													<div class="nes-icon github" style='margin-left:10px;'></div>
-												</a>
+	
 												<a href = "https://www.creativemachineslab.com/">
 													<div class="nes-icon google"></div>
 												</a>
@@ -204,33 +272,11 @@
 											
 										</div>
 									</div>
+									
 									<div class="row" style='margin-top:30px;'>
 										<div class="col-xs-1.5">
 											<img 
-											src = "https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Columbia_Engineering_logo.svg/50px-Columbia_Engineering_logo.svg.png"
-											style="width: 100%; height:auto; image-rendering: pixelated; image-rendering: -moz-crisp-edges;"
-											>
-										</div>
-										<div class="col-xs-10">
-											<h3 style='margin-left:10px;'>CU Robotics</h3>
-												<p style='margin-left:10px;'>Computer Vision subteam for self-driving car</p>
-												<p style='margin-left:10px;'>Jan 2022 - Present</p>
-											
-											<div>
-												<a href = "https://github.com/columbia-university-robotics/auto-car">
-													<div class="nes-icon github" style='margin-left:10px;'> </div>
-												</a>
-												<a href = "https://www.columbiaroboticsclub.com/">
-													<div class="nes-icon google"></div>
-												</a>
-											</div>
-											
-										</div>
-									</div>
-									<div class="row" style='margin-top:30px;'>
-										<div class="col-xs-1.5">
-											<img 
-											src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Texas%E2%80%93Rio_Grande_Valley_Vaqueros_logo.svg/50px-Texas%E2%80%93Rio_Grande_Valley_Vaqueros_logo.svg.png"
+											src = "utrgv.png"
 											style="width: 100%; height:auto; image-rendering: pixelated; image-rendering: -moz-crisp-edges;"
 											>
 										</div>
@@ -254,17 +300,17 @@
 									<div class="row" style='margin-top:30px;'>
 										<div class="col-xs-1.5">
 											<img 
-											src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Texas%E2%80%93Rio_Grande_Valley_Vaqueros_logo.svg/50px-Texas%E2%80%93Rio_Grande_Valley_Vaqueros_logo.svg.png"
-											style="width: 100%; height:auto; image-rendering: pixelated; image-rendering: -moz-crisp-edges;"
+											src = "pix_uber.png"
+											style="width: 50px; height:auto; image-rendering: pixelated; image-rendering: -moz-crisp-edges;"
 											>
 										</div>
 										<div class="col-xs-10">
-											<h3 style='margin-left:10px;'>UTRGV Math Department</h3>
-												<p style='margin-left:10px;'>Teaching Assistant for Calculus</p>
-												<p style='margin-left:10px;'>Jan 2020 - May 2020</p>
+											<h3 style='margin-left:10px;'>Uber</h3>
+												<p style='margin-left:10px;'>UCP Software Engineering Fellow</p>
+												<p style='margin-left:10px;'>Mar 2022 - Nov 2022</p>
 											
 											<div>
-												<a href = "https://www.utrgv.edu/math/">
+												<a href = "https://www.uber.com/us/en/careers/careerprep/">
 													<div class="nes-icon google" style='margin-left:10px;'></div>
 												</a>
 											</div>
@@ -288,7 +334,7 @@
 			<div class="container" style='margin-top:50px; padding-top:0px; font-size:60%'>
 				<div class="row">
 					<div class="col-xs-12" style='text-align:center; color:#ccc;'>
-						Working on more 8bit! Samya Ahsan &copy; 2022
+						Working on more 8bit! Samya Ahsan &copy; 2023
 					</div>
 				</div>
 			</div>
